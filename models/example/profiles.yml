@@ -1,0 +1,13 @@
+# Kepake kalo di dbt-core, di dbt cloud gaperlu config profiles.yml lagi
+# Template for gcp service account configuration
+my-bigquery-db:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: GCP_PROJECT_ID
+      dataset: DBT_DATASET_NAME
+      threads: 4 # Must be a value of 1 or greater
+      keyfile: /PATH/TO/BIGQUERY/keyfile.json
+      OPTIONAL_CONFIG: VALUE
